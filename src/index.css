@@ -131,14 +131,16 @@ body::before {
 .brand-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.7rem;
   color: var(--color-ink);
+  padding-block: 2px;
 }
 .brand-logo {
-  width: 26px;
-  height: 30px;
+  width: 22px;
+  height: 26px;
   flex-shrink: 0;
   display: block;
+  transform: translateY(1px);
 }
 .brand-wordmark {
   font-family: var(--font-serif);
