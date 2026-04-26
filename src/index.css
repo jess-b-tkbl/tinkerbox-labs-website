@@ -127,23 +127,26 @@ body::before {
   box-shadow: 0 1px 12px rgba(10, 10, 10, 0.04);
 }
 
-/* Brand wordmark (serif logo, sans "Labs" suffix raised + tracked) */
+/* Brand: T-net logo + serif wordmark */
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-ink);
+}
+.brand-logo {
+  width: 26px;
+  height: 30px;
+  flex-shrink: 0;
+  display: block;
+}
 .brand-wordmark {
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: 1.35rem;
   letter-spacing: -0.005em;
   line-height: 1;
-}
-.brand-wordmark__labs {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 0.5em;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-left: 0.6em;
-  vertical-align: 0.32em;
+  color: var(--color-ink);
 }
 
 /* Sliding nav indicator */

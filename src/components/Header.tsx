@@ -38,8 +38,26 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="mx-auto flex w-full max-w-[72rem] items-center justify-between gap-4 px-6">
-        <a href="/" aria-label="Tinkerbox Labs home" className="brand-wordmark text-(--color-ink) no-underline">
-          Tinkerbox<span className="brand-wordmark__labs">Labs</span>
+        <a href="/" aria-label="Tinkerbox Labs home" className="brand-link no-underline">
+          <svg className="brand-logo" viewBox="0 0 170 200" aria-hidden="true">
+            <path
+              d="M 40 40 L 100 40 L 100 70 L 100 160 L 70 160 L 70 70 L 40 70 Z"
+              fill="none" stroke="currentColor" strokeWidth="6" strokeLinejoin="round"
+            />
+            <g stroke="currentColor" strokeOpacity="0.35" strokeWidth="3" strokeDasharray="6 5">
+              <line x1="70" y1="40" x2="70" y2="70" />
+              <line x1="70" y1="70" x2="100" y2="70" />
+              <line x1="70" y1="100" x2="100" y2="100" />
+              <line x1="70" y1="130" x2="100" y2="130" />
+            </g>
+            <polygon
+              points="100,40 126,25 126,55 100,70"
+              fill="rgba(255,255,255,0.6)" stroke="currentColor" strokeWidth="6" strokeLinejoin="round"
+            />
+            <path d="M 110 33 Q 119 22 125 26" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+            <path d="M 125 26 L 121 24 M 125 26 L 122 30" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          </svg>
+          <span className="brand-wordmark">Tinkerbox Labs</span>
         </a>
         <nav
           ref={navRef}
