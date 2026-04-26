@@ -18,7 +18,7 @@ const SERVICES: Service[] = [
 export default function About() {
   return (
     <section id="about" className="mx-auto max-w-[40rem] py-16">
-      <h2 className="section-h2 mb-6 text-[0.95rem] font-medium text-(--color-ink)">About</h2>
+      <h2 className="section-h2 mb-6 text-(--color-ink)">About</h2>
 
       <p className="mb-5 text-[1rem] leading-[1.6] text-(--color-ink-soft)">
         Tinkerbox Labs works at the intersection of applied AI, software engineering and

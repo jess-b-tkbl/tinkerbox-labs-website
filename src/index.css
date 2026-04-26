@@ -158,6 +158,10 @@ body::before {
   display: inline-block;
   border-bottom: 2px solid var(--color-ink);
   padding-bottom: 6px;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 /* Pill button with apricot bloom on hover */
