@@ -69,7 +69,7 @@ body::before {
 /* ---------- Hero blob (rotate + breathe) ---------- */
 .hero-blob {
   position: absolute;
-  top: -65px;
+  top: -95px;
   right: -5%;
   width: 70%;
   aspect-ratio: 1 / 1;
