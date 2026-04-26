@@ -38,18 +38,8 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="mx-auto flex w-full max-w-[72rem] items-center justify-between gap-4 px-6">
-        <a href="/" aria-label="Tinkerbox Labs home" className="brand-link no-underline">
-          <svg className="brand-logo" viewBox="35 20 95 145" aria-hidden="true">
-            <path
-              d="M 40 40 L 100 40 L 100 70 L 100 160 L 70 160 L 70 70 L 40 70 Z"
-              fill="none" stroke="currentColor" strokeWidth="7" strokeLinejoin="round" strokeLinecap="round"
-            />
-            <polygon
-              points="100,40 126,25 126,55 100,70"
-              fill="rgba(255,255,255,0.55)" stroke="currentColor" strokeWidth="7" strokeLinejoin="round" strokeLinecap="round"
-            />
-          </svg>
-          <span className="brand-wordmark">Tinkerbox Labs</span>
+        <a href="/" aria-label="Tinkerbox Labs home" className="brand-wordmark no-underline">
+          Tinkerbox Labs
         </a>
         <nav
           ref={navRef}
