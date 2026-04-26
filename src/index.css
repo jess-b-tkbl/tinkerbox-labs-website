@@ -23,8 +23,8 @@ body {
   background:
     linear-gradient(196deg,
       var(--color-bg-top) 0%,
-      var(--color-bg-top) 12%,
-      var(--color-bg-bottom) 85%);
+      var(--color-bg-top) 8%,
+      var(--color-bg-bottom) 75%);
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -199,7 +199,7 @@ body::before {
 /* Section separator */
 .rule {
   border: 0;
-  border-top: 1px solid #d8dfe4;
+  border-top: 1px solid var(--color-line-strong);
   margin: 0;
   width: 100%;
 }
