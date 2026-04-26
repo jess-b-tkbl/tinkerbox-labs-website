@@ -23,8 +23,8 @@ body {
   background:
     linear-gradient(196deg,
       var(--color-bg-top) 0%,
-      var(--color-bg-top) 18%,
-      var(--color-bg-bottom) 100%);
+      var(--color-bg-top) 12%,
+      var(--color-bg-bottom) 85%);
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 16px;
