@@ -21,9 +21,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    linear-gradient(180deg,
+    linear-gradient(196deg,
       var(--color-bg-top) 0%,
-      var(--color-bg-top) 30%,
+      var(--color-bg-top) 18%,
       var(--color-bg-bottom) 100%);
   color: var(--color-ink);
   font-family: var(--font-sans);
