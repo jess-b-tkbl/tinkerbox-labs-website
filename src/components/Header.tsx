@@ -39,7 +39,7 @@ export default function Header() {
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="mx-auto flex w-full max-w-[72rem] items-center justify-between gap-4 px-6">
         <a href="/" aria-label="Tinkerbox Labs home" className="brand-wordmark text-(--color-ink) no-underline">
-          Tinkerbox Labs
+          Tinkerbox<span className="brand-wordmark__labs">Labs</span>
         </a>
         <nav
           ref={navRef}

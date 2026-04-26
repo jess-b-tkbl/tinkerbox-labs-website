@@ -124,15 +124,26 @@ body::before {
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
+  box-shadow: 0 1px 12px rgba(10, 10, 10, 0.04);
 }
 
-/* Brand wordmark (serif logo) */
+/* Brand wordmark (serif logo, sans "Labs" suffix raised + tracked) */
 .brand-wordmark {
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: 1.35rem;
   letter-spacing: -0.005em;
   line-height: 1;
+}
+.brand-wordmark__labs {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.5em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-left: 0.6em;
+  vertical-align: 0.32em;
 }
 
 /* Sliding nav indicator */
