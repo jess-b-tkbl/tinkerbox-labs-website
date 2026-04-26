@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tinkerbox-labs.co.uk/sitemap.xml

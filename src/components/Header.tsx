@@ -38,7 +38,7 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="mx-auto flex w-full max-w-[72rem] items-center justify-between gap-4 px-6">
-        <a href="/" aria-label="Tinkerbox Labs home" className="text-[0.95rem] font-medium tracking-[-0.01em] text-(--color-ink) no-underline">
+        <a href="/" aria-label="Tinkerbox Labs home" className="brand-wordmark text-(--color-ink) no-underline">
           Tinkerbox Labs
         </a>
         <nav
