@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* ---------- Design tokens (mirrors the static site) ---------- */
+@theme {
+  --color-bg-top: #fbfbfb;
+  --color-bg-bottom: #c2d3e0;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #2c3140;
+  --color-muted: #6b7184;
+  --color-line: rgba(10, 10, 10, 0.08);
+  --color-line-strong: rgba(10, 10, 10, 0.14);
+
+  --font-serif: ui-serif, "New York", Charter, "Iowan Old Style", "Apple Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Neue Haas Grotesk Text Pro", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg,
+      var(--color-bg-top) 0%,
+      var(--color-bg-top) 30%,
+      var(--color-bg-bottom) 100%) fixed;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--color-ink); color: #fff;
+  padding: 0.5rem 0.75rem; border-radius: 0 0 12px 0;
+}
+.skip:focus { left: 0; }
+
+/* ---------- Coefficient-style colourful frame ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 14px;
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 100;
+  padding: 1px;
+  background:
+    linear-gradient(135deg,
+      #ffd1c0 0%,
+      #fff3a8 25%,
+      #e6ccf3 55%,
+      #c5dafd 80%,
+      #ffd1c0 100%) border-box;
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+@media (max-width: 40rem) {
+  body::before { inset: 8px; }
+}
+
+/* ---------- Hero blob (rotate + breathe) ---------- */
+.hero-blob {
+  position: absolute;
+  top: -65px;
+  right: -5%;
+  width: 70%;
+  aspect-ratio: 1 / 1;
+  z-index: -1;
+  background:
+    radial-gradient(closest-side at 35% 45%, #ffd1c0 0%, rgba(255, 209, 192, 0) 70%),
+    radial-gradient(closest-side at 60% 35%, #fff3a8 0%, rgba(255, 243, 168, 0) 65%),
+    radial-gradient(closest-side at 60% 65%, #e6ccf3 0%, rgba(230, 204, 243, 0) 70%),
+    radial-gradient(closest-side at 35% 70%, #c5dafd 0%, rgba(197, 218, 253, 0) 75%);
+  filter: blur(40px);
+  opacity: 0.85;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  animation:
+    heroBlobRotate 75s linear infinite,
+    heroBlobBreathe 14s ease-in-out infinite;
+  will-change: rotate, scale;
+}
+@keyframes heroBlobRotate {
+  from { rotate: 0deg; }
+  to   { rotate: 360deg; }
+}
+@keyframes heroBlobBreathe {
+  0%,100% { scale: 0.92; }
+  50%     { scale: 1.18; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob { animation: none; }
+}
+
+/* ---------- Hero serif headline ---------- */
+.hero-h1 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 2rem;
+  max-width: 22ch;
+}
+
+/* ---------- Sticky header (transparent at top, glassy when scrolled) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0.85rem 0;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, backdrop-filter 0.2s ease;
+}
+.site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom-color: var(--color-line);
+}
+
+/* Sliding nav indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--color-ink);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.28s cubic-bezier(.4, .1, .2, 1),
+    width 0.28s cubic-bezier(.4, .1, .2, 1),
+    opacity 0.18s ease;
+}
+
+/* Section h2 chunky underline */
+.section-h2 {
+  display: inline-block;
+  border-bottom: 2px solid var(--color-ink);
+  padding-bottom: 6px;
+}
+
+/* Pill button with apricot bloom on hover */
+.btn-pill {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--color-ink);
+  background: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+  cursor: pointer;
+}
+.btn-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 90% 50%, #ffd6c4 0%, #ffeadd 45%, transparent 75%);
+  opacity: 0;
+  transform: scale(0.6);
+  transform-origin: 90% 50%;
+  transition: opacity 0.4s ease, transform 0.55s cubic-bezier(.2, .7, .3, 1);
+  z-index: -1;
+}
+.btn-pill:hover { transform: translateY(-1px); }
+.btn-pill:hover::before { opacity: 1; transform: scale(1.2); }
+
+/* Section separator */
+.rule {
+  border: 0;
+  border-top: 1px solid #d8dfe4;
+  margin: 0;
+  width: 100%;
+}
