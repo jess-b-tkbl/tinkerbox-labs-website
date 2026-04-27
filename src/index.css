@@ -216,7 +216,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 90% 50%, #ffd6c4 0%, #ffeadd 45%, transparent 75%);
+  background: radial-gradient(circle at 90% 50%, #ffe4d6 0%, #fff3ec 45%, transparent 75%);
   opacity: 0;
   transform: scale(0.6);
   transform-origin: 90% 50%;
@@ -224,7 +224,7 @@ body::before {
   z-index: -1;
 }
 .btn-pill:hover { transform: translateY(-1px); }
-.btn-pill:hover::before { opacity: 1; transform: scale(1.2); }
+.btn-pill:hover::before { opacity: 0.7; transform: scale(1.1); }
 
 /* Section separator */
 .rule {
