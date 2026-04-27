@@ -32,7 +32,7 @@
 
 /* ---------- Design tokens (mirrors the static site) ---------- */
 @theme {
-  --color-bg-top: #fbfbfb;
+  --color-bg-top: #fefcf9;
   --color-bg-bottom: #c2d3e0;
   --color-ink: #0a0a0a;
   --color-ink-soft: #2c3140;
